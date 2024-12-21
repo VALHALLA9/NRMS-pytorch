@@ -1,0 +1,3 @@
+Loaded module: cuda/11.8
+ERROR: Unable to locate a modulefile for 'python3/3.8.19'
+/zhome/b0/0/202247/.lsbatch/1734472936.23454479.shell: line 36: 746908 Killed                  python /zhome/b0/0/202247/test/ebnerd_nrms_docvec.py

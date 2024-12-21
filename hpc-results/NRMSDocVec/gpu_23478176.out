@@ -1,0 +1,271 @@
+Thu Dec 19 07:07:04 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          On  |   00000000:86:00.0 Off |                    0 |
+| N/A   26C    P0             45W /  250W |       1MiB /  40960MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+data_path : /work3/s232263/NRMS/Dataset/
+seed : None
+datasplit : ebnerd_large
+debug : False
+bs_train : 32
+bs_test : 32
+batch_size_test_wo_b : 32
+batch_size_test_w_b : 4
+history_size : 20
+npratio : 4
+epochs : 5
+train_fraction : 0.1
+fraction_test : 1.0
+nrms_loader : NRMSDataLoaderPretransform
+n_chunks_test : 10
+chunks_done : 0
+document_embeddings : /work3/s232263/NRMS/Dataset/contrastive_vector.parquet
+title_size : 768
+head_num : 16
+head_dim : 16
+attention_hidden_dim : 200
+newsencoder_units_per_layer : [512, 512, 512]
+optimizer : adam
+loss : cross_entropy_loss
+dropout : 0.2
+learning_rate : 0.0001
+newsencoder_l2_regularization : 0.0001
+Initiating articles...
+title_size: 768
+history_size: 20
+head_num: 16
+head_dim: 16
+attention_hidden_dim: 200
+optimizer: adam
+loss: cross_entropy_loss
+dropout: 0.2
+learning_rate: 0.0001
+newsencoder_units_per_layer: [512, 512, 512]
+newsencoder_l2_regularization: 0.0001
+Initiating training-dataloader
+Using GPU: NVIDIA A100-PCIE-40GB
+Initiating NRMSDocVec, start training...
+Epoch 1/5
+Current learning rate: 0.0001
+Epoch 1/5, Train Loss: 1.0052, Val Loss: 1.9376, Val AUC: 0.5659
+Best model updated
+Epoch 2/5
+Current learning rate: 0.0001
+Epoch 2/5, Train Loss: 0.8606, Val Loss: 2.1447, Val AUC: 0.5597
+Epoch 3/5
+Current learning rate: 0.0001
+Epoch 3/5, Train Loss: 0.8297, Val Loss: 2.0715, Val AUC: 0.5689
+Best model updated
+Epoch 4/5
+Current learning rate: 0.0001
+Epoch 4/5, Train Loss: 0.8174, Val Loss: 2.0667, Val AUC: 0.5726
+Best model updated
+Epoch 5/5
+Current learning rate: 0.0001
+Epoch 5/5, Train Loss: 0.8085, Val Loss: 2.0224, Val AUC: 0.5779
+Best model updated
+loading model: /work3/s232263/NRMS/Dataset/DUMP/state_dict/NRMSDocVec-2024-12-19_07-07-17/weights.pt
+Initiating testset...
+DEFAULT_INVIEW_ARTICLES_COL article_ids_inview
+Initiating testset without beyond-accuracy...
+Test chunk: 1/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 14957244
+Total time taken: 4255.82 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 1 processed and saved.
+Memory cleaned for chunk 1.
+Test chunk: 2/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15014184
+Total time taken: 4248.84 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 2 processed and saved.
+Memory cleaned for chunk 2.
+Test chunk: 3/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15152993
+Total time taken: 4333.55 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 3 processed and saved.
+Memory cleaned for chunk 3.
+Test chunk: 4/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15109256
+Total time taken: 4286.44 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 4 processed and saved.
+Memory cleaned for chunk 4.
+Test chunk: 5/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 14918054
+Total time taken: 4317.71 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 5 processed and saved.
+Memory cleaned for chunk 5.
+Test chunk: 6/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15020682
+Total time taken: 4272.86 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 6 processed and saved.
+Memory cleaned for chunk 6.
+Test chunk: 7/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15026687
+Total time taken: 4303.50 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 7 processed and saved.
+Memory cleaned for chunk 7.
+Test chunk: 8/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15095957
+Total time taken: 4285.40 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 8 processed and saved.
+Memory cleaned for chunk 8.
+Test chunk: 9/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39270
+Total predictions: 15000998
+Total time taken: 4328.51 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 9 processed and saved.
+Memory cleaned for chunk 9.
+Test chunk: 10/10
+Initializing NRMSDataLoader for test chunk...
+NRMSDataLoader initialized successfully.
+Initializing torch DataLoader...
+Torch DataLoader initialized successfully.
+Calling predict_scores...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 39271
+Total predictions: 14932814
+Total time taken: 4242.47 seconds
+predict_scores completed successfully.
+Calling add_prediction_scores...
+add_prediction_scores completed successfully.
+Saving results to Parquet...
+Test chunk 10 processed and saved.
+Memory cleaned for chunk 10.
+Initiating testset with beyond-accuracy...
+predict_scores: Entering function.
+predict_scores: Completed processing all batches.
+Total batches processed: 0
+Total predictions: 0
+Total time taken: 0.00 seconds
+Saving prediction results...
+Evaluating test set predictions...
+Sample converted labels shape: (10,)
+Sample converted scores shape: (10,)
+Test Set Results:
+AUC: 0.6514
+MRR: 0.4310
+NDCG@5: 0.4816
+NDCG@10: 0.5423
+Zipping /work3/s232263/NRMS/Dataset/DUMP/test_predictions/NRMSDocVec-2024-12-19_07-07-17/predictions.txt to /work3/s232263/NRMS/Dataset/DUMP/test_predictions/NRMSDocVec-2024-12-19_07-07-17/NRMSDocVec-1734588434-ebnerd_large.zip

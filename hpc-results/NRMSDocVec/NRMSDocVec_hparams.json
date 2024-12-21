@@ -1,0 +1,1 @@
+{"title_size": 768, "history_size": 20, "head_num": 16, "head_dim": 16, "attention_hidden_dim": 200, "optimizer": "adam", "loss": "cross_entropy_loss", "dropout": 0.2, "learning_rate": 0.0001, "newsencoder_units_per_layer": [512, 512, 512], "newsencoder_l2_regularization": 0.0001}
