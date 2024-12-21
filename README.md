@@ -4,16 +4,5 @@ This repository contains the PyTorch implementation of the **NRMS_docvec** model
 For more information and the datasets: https://recsys.eb.dk/dataset/
 ---
 
-## **Requirements**
 
-- Python 3.8+
-- PyTorch 1.10+
-- Additional libraries:
-  - `numpy`
-  - `torch`
-  - `polars`
-  - `tqdm`
 
-Install dependencies using:
-```bash
-pip install -r requirements.txt
